@@ -1,0 +1,734 @@
+---
+title: "Documento de trabajo sobre generación de electricidad, renovables y geotermia en Colombia"
+subtitle: "Pasantia Flacso-Ecopetrol"
+author: "Gerardo Esteban, Gomez-Santiago"
+date: '2023-08-24'
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+csl: apa.csl
+bibliography: bibliography.bib
+---
+
+## Resumen
+
+El presente documento busca mostrar la evolución reciente de las Fuentes No Convencionales de Energía Renovable (FNCER) en Colombia, enfatizar los riesgos del rapido crecimiento de energías que dependen del clima como la solar y la eólica, y presentar los incentivos que han conducido al desarrollo de energías mas estables como la geotermia en otros paises, adicionalmente, se presenta un diagnostico del sistema electrico colombiano y los incentivos existentes a las FNCER contenidos en las leyes 1715 de 2014 y 2099 de 2021.
+
+## Introducción
+
+La Transición Energética Justa (TEJ) ha sido posicionada por el actual gobierno como una política de desarrollo económico basada en la energía, buscando a través de ese proceso, mejorar la accesibilidad a servicios energéticos en todos los territorios y dar alternativas económicas, que sean de bajo impacto ambiental y modifiquen la preponderancia de los hidrocarburos en la matriz productiva y exportadora.
+
+Los avances tecnológicos en el uso final de la energía, han conducido al sector a diferenciarse en dos grandes ámbitos, **i.** generación, distribución y uso de energía eléctrica y **ii.** extracción y procesamiento de hidrocarburos para movilidad. El presenta trabajo se inserta en el primero de estos ámbitos.
+
+Uno de los objetivos para alcanzar la transición energética, está en incrementar la electrificación de procesos industriales y cotidianos, ya que es en el sector eléctrico, en donde las alternativas a fuentes convencionales de energía (hidrocarburos y carbón) están más difundidas, experimentando además, en los últimos años, reducciones significativas de costos.\
+De manera que uno de los mecanismos más relevantes de la transición energética, consiste en fomentar el acceso a servicios energéticos a través de la electricidad *(cambios de demanda)* y en fomentar la generación de electricidad desde Fuentes No Convencionales de Energía Renovable (FNCER) *(cambios de oferta)*.
+
+Desde el punto de vista de la oferta, Colombia tiene una matriz eléctrica relativamente limpia, con preponderancia en la generación de energía a través de plantas hidroeléctricas.\
+Sin embargo, dada su composición de las fuentes de energía en el sistema eléctrico, existe espacio para la incorporación de FNCER, buscando **i.** reemplazar el aporte de las energías No Renovables y **ii.** reducir la vulnerabilidad a fenómenos climáticos extremos, que pueden afectar a las fuentes hidroeléctricas.
+
+Con ese objetivo, los incentivos a energías renovables en Colombia, se han establecido a través de las leyes 1715 de 2014 y 2099 de 2021, en las mismas, se toma noción del conjunto de fuentes alternativas -solar, eólica, biomasa, geotermia,  pequeños aprovechamientos hidroeléctricos (PAH), e hidrógenos- y se prescriben beneficios fiscales para su desarrollo y promoción.
+
+Sin embargo, entre las FNCER, existen diferencias significativas que no han sido tomadas en cuenta en dichas leyes.\
+Estas diferencias no resultan triviales para la matriz eléctrica, como se verá más adelante, existen limitaciones en términos de fiabilidad en aquellas fuentes energéticas que dependen del clima, como la solar y la eólica.
+
+Partiendo de dichas diferencias entre las FNCER, el presente trabajo busca hacer un breve diagnóstico sobre el estado actual en la generación de electricidad en Colombia, mostrar la evolución de energías alternativas y plantear la necesidad de que exista una mayor diversificación en dichos desarrollos, donde se establezcan incentivos adecuados para fuentes de energía con mayor fiabilidad como la geotermia.
+
+## Relevancia de la energía
+
+La energía, ha sido históricamente un determinante de las condiciones de vida del ser humano, en términos concretos, el grado de satisfacción material en la vida cotidiana, depende de los servicios energéticos demandados (movilidad, calefacción, enfriamiento, iluminación, etc.).\
+El paso de una fuente de energía a otra, es lo que ha determinado la ampliación de las restricciones técnicas para transformar el entorno  [@stern2011role], aun cuando sus consecuencias no han sido siempre positivas, ha sido el aumento en la capacidad energética lo que ha permitido grandes avances en aspectos relevantes como la educación, el acceso a la información, o la salud.[^1]
+
+[^1]: La energía fue reconocida como un bien fundamental para el desarrollo humano por la ONU desde 1987 con el *Reporte Burtland - Our common future*, hace parte de los Objetivos de Desarrollo Sostenible (ODS 2030) y en Colombia el Articulo 365 de la Constitución Nacional, coloca a los servicios públicos como la finalidad social del Estado.
+
+Por otro lado, el sector energético es el principal impulsor del cambio climático, según el Grupo Intergubernamental de Expertos sobre el Cambio Climático (IPCC por sus siglas en inglés) cerca del $60\%$ de las emisiones de carbono son producto de la generación de energía, lo que ha conducido a los gobiernos a acordar acciones vinculantes que reduzcan la utilización de fuentes fósiles y ha dado mayor énfasis al concepto de *Transición Energética* en la agenda de organizaciones públicas y privadas.
+
+Si bien no existe un acuerdo unánime en torno a su definición, la transición energética es definida como un proceso, intensivo en innovación y cuyo objetivo es "la búsqueda del *reemplazo* o *mejora* de las fuentes de energía convencionales" [@carley2011energy], además, en dicho proceso el suministro de servicios energéticos no puede verse comprometido en ningún momento, dada su relevancia como un bien básico para el funcionamiento de la economía y la vida en sociedad.\
+De manera que las acciones que se lleven adelante para reemplazar o mejorar la utilización de fuentes de energía convencionales, deben también enmarcarse en la búsqueda de mayor seguridad energética, entendida como "la disponibilidad constante e ininterrumpida de fuentes de energía a precios accesibles" [@iea2014a].
+
+Es por lo anterior, que las políticas energéticas instrumentadas por organismos públicos y las acciones de empresas privadas en el sector energético, son de vital importancia para alcanzar los objetivos en materia de reducción de emisiones, sin comprometer el acceso a servicios energéticos, para de esa manera, mejorar la calidad de vida de la población.
+
+## Escenario actual en la matriz eléctrica colombiana
+
+En Colombia, el crecimiento anual equivalente de la demanda y la generación de energía eléctrica entre el 2000 y el 2022 ha sido del `r round((((84.98/42.25)+1)^(1/22)-1)*100,2)`$\%$ y `r round((((84.520/42.190)+1)^(1/22)-1)*100,2)`$\%$ respectivamente, lo que le ha garantizado la casi autosuficiencia eléctrica del 2000 en adelante.[^2]
+
+[^2]: Colombia fue exportador de energía eléctrica entre 2001 y 2015 e importador de energía eléctrica entre 2016 y 2022.
+
+En términos per cápita, Colombia es uno de los países con menor consumo de electricidad en la región, y el consumo promedio mundial en 2022 fue 2.18 veces mayor, es decir, más del doble de lo que se consume por habitante en Colombia (Gráfico 1.A)\
+Esta baja demanda relativa, es un argumento adicional a las proyecciones de demanda eléctrica de la Unidad de Planeación Minero Energética (UPME), que espera un crecimiento continuo y al 2036 implicaría un consumo mayor al de 2022 en un $45\%$.
+
+En cuanto a fiabilidad en el suministro, a parte de la experiencia de racionamiento eléctrico durante los años 1992 y 1993, Colombia no ha tenido incidentes relevantes, su sistema eléctrico dio respuestas favorables al fenómeno del niño de 2015 - 2016, y es por lo tanto, uno de los de mejor desempeño en la región.
+
+El sistema eléctrico de Colombia, además de tener una generación acoplada a la demanda, cuenta con una mezcla de fuentes que hacen al sistema relativamente limpio, siendo uno de los países con menores emisiones per cápita en la generación de energía eléctrica de la región (Gráfico 1.B).[^3]
+
+[^3]: Según el *Energy Trilemma Index* elaborado por el Concejo Mundial de Energía (WEC por sus siglas en ingles), el cual califica los sistemas energéticos de los países en las dimensiones de Seguridad, Equidad y Sostenibilidad, Colombia ocupa el lugar 21 de entre 127 países en la categoría de sostenibilidad.
+
+### Gráfico 1: Demanda y emisiones por habitante en el sector eléctrico
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, fig.pos='H', fig.height=3.5, fig.width=6, fig.align='center'}
+
+rm(list = ls())
+
+library(tidyverse)
+library(glue)
+library(ggtext)
+library(patchwork)
+
+owd <- read.csv("owid-energy-data.csv")
+
+paises <- c("Argentina",
+            "Bolivia",
+            "Chile",
+            "Colombia",
+            "Costa Rica",
+            "Mexico",
+            "Brazil",
+            "Ecuador",
+            "Uruguay",
+            "Peru",
+            "World")
+
+consumoElect <- paises %>% map(.f = ~{
+  
+  owd %>%  
+    select(country, year, iso_code, population, gdp, electricity_demand) %>% 
+    filter(country == .x) %>% 
+    mutate(perCapita = (electricity_demand*1000000/population))
+  
+})
+
+consumoElect <- consumoElect %>% bind_rows()
+
+consumoElect <- consumoElect %>% 
+  filter(!is.na(perCapita))
+
+consumoElect <- consumoElect %>% 
+  group_by(country) %>% 
+  mutate(mediana = median(perCapita),
+         media = mean(perCapita))
+
+consumoElect <- consumoElect %>% 
+mutate(iso_code = ifelse(iso_code == "", "World", iso_code),
+       relleno = ifelse(iso_code == "COL", 1,
+                        ifelse(iso_code == "World", 2, 0)))
+
+
+graph5 <- consumoElect %>% 
+  ggplot(mapping = aes(x = reorder(iso_code, mediana), y = perCapita, fill = as.factor(relleno))) +
+  geom_boxplot(show.legend = F) +
+  scale_fill_manual(values = c("white", "#FFC300", "#3667A6")) +
+  scale_y_continuous(n.breaks = 10) +
+  labs(title = "A: Demanda de electricidad per cápita",
+       subtitle = NULL,
+       y = "Megavatios-Hora (MWh) por habitante",
+       x = NULL,
+       caption = "Fuente: Elaboración propia en base a OWD") +
+  theme_test() +
+  theme(plot.title = element_text(hjust = 0.5, size = 8),
+        plot.subtitle = element_text(hjust = 0.0, size = 7),
+        plot.caption = element_text(size=6, hjust=1, face="italic", color="black"),
+        axis.text.x = element_text(size = 6, angle = 45),
+        axis.text.y = element_text(size = 6),
+        axis.title.y = element_text(size = 7),
+        axis.title.x = element_text(size = 7),
+        legend.title = element_text(size=7, hjust = 0.5), 
+        legend.text = element_text(size=6),
+        legend.position = "none")
+
+CO2Emissions <- paises %>% map(.f = ~{
+  
+  owd %>%  
+    select(country, year, iso_code, population, gdp, greenhouse_gas_emissions) %>% 
+    filter(country == .x) %>% 
+    mutate(perCapita = (greenhouse_gas_emissions*1000000/population))
+  
+})
+
+
+CO2Emissions <- CO2Emissions %>% bind_rows()
+
+CO2Emissions <- CO2Emissions %>% 
+  filter(!is.na(perCapita))
+
+CO2Emissions <- CO2Emissions %>% 
+  group_by(country) %>% 
+  mutate(mediana = median(perCapita),
+         media = mean(perCapita))
+
+CO2Emissions <- CO2Emissions %>% 
+  mutate(iso_code = ifelse(iso_code == "", "World", iso_code),
+         relleno = ifelse(iso_code == "COL", 1,
+                          ifelse(iso_code == "World", 2, 0)))
+
+graph6 <- CO2Emissions %>% 
+  ggplot(mapping = aes(x = reorder(iso_code, mediana), y = perCapita, fill = as.factor(relleno))) +
+  geom_boxplot(show.legend = F) +
+  scale_fill_manual(values = c("white", "#FFC300", "#3667A6")) +
+  scale_y_continuous(n.breaks = 10) +
+  labs(title = "B: Emisiones de CO2 per cápita para \n la generación de electricidad",
+       subtitle = NULL,
+       y = "Toneladas de CO2 equivalente por habitante",
+       x = NULL,
+       caption = "Los datos corresponden al periodo 2000 - 2022") +
+  theme_test() +
+  theme(plot.title = element_text(hjust = 0.5, size = 8),
+        plot.subtitle = element_text(hjust = 0.0, size = 7),
+        plot.caption = element_text(size=6, hjust=0.0, face="italic", color="black"),
+        axis.text.x = element_text(size = 6, angle = 45),
+        axis.text.y = element_text(size = 6),
+        axis.title.y = element_text(size = 7),
+        axis.title.x = element_text(size = 7),
+        legend.title = element_text(size=7, hjust = 0.5), 
+        legend.text = element_text(size=6),
+        legend.position = "none")
+
+  
+graph5 + graph6
+
+```
+
+Si bien lo anterior implica que los compromisos de Colombia en cuanto a transición energética en el sector eléctrico son reducidos, hay tres motivos para seguir avanzando en un sistema eléctrico con mayor participación de las FNCER:
+
+i. La primera esta en la relevancia de la energía hidroeléctrica, si bien Colombia no es un emisor significativo de gases efecto invernadero, el que su sistema eléctrico este concentrado en fuentes hidroeléctricas, lo hace más vulnerable a los fenómenos climáticos extremos, por lo que es necesario diversificar la generación de electricidad, incorporando FNCER.
+ii. La segunda esta en el potencial con el que cuenta el país para la generación de energía eléctrica a través de FNCER, que facilita el reemplazo de combustibles fósiles en el mediano plazo, y eventualmente, la generación de excedentes de electricidad que podrían ser comercializados con países vecinos.
+iii. y la tercera, tiene que ver con las expectativas de crecimiento en la demanda de energía eléctrica, que obligan a que el país siga incrementando su capacidad de generación de electricidad a través de FNCER en el marco de la crisis climática. 
+
+### Gráfico 2: Evolución y comparación de fuentes en la generación de electricidad
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, fig.pos='H', fig.height=5, fig.width=8, fig.align='center'}
+
+Colombia <- owd %>% filter(country == "Colombia" | country == "World") %>% 
+  select(country, year, iso_code, ends_with("electricity"))
+  
+Colombia <- Colombia %>% 
+  gather(key = tipo, value = valor, 4:length(Colombia))
+
+source_elec <- c("biofuel_electricity",
+                 "hydro_electricity",
+                 "coal_electricity",
+                 "gas_electricity",
+                 "oil_electricity",
+                 "wind_electricity",
+                 "solar_electricity",
+                 "other_renewable_exc_biofuel_electricity")
+
+map1 <- source_elec %>% 
+  map(.f = ~{
+    
+    Colombia %>% 
+      filter(tipo == .x,
+             year > 1989)
+  })
+
+
+map1 <- map1 %>% bind_rows()
+
+map1 <- map1 %>% 
+  mutate(renovable = case_when(
+    tipo == "biofuel_electricity" ~ 1,
+    tipo == "hydro_electricity" ~ 2, 
+    tipo == "solar_electricity" ~ 1, 
+    tipo == "wind_electricity" ~ 1,
+    tipo == "other_renewable_exc_biofuel_electricity" ~ 1,
+    tipo == "coal_electricity" ~ 0,
+    tipo == "gas_electricity" ~ 0,
+    tipo == "oil_electricity" ~ 0),
+    nombre = case_when(
+      tipo == "biofuel_electricity" ~ "Bioenergía",
+      tipo == "hydro_electricity" ~ "Hidroeléct.", 
+      tipo == "solar_electricity" ~ "Solar", 
+      tipo == "wind_electricity" ~ "Eólica", 
+      tipo == "coal_electricity" ~ "Carbón",
+      tipo == "gas_electricity" ~ "Gas",
+      tipo == "oil_electricity" ~ "Oil",
+      tipo == "other_renewable_exc_biofuel_electricity" ~ "Otras Renov."))
+    
+map1 <- map1 %>% 
+  mutate(nombre = factor(nombre, levels = c("Carbón", "Oil", "Gas", 
+                                            "Bioenergía", "Solar", "Eólica", "Otras Renov.",
+                                            "Hidroeléct.")),
+         renovable = factor(renovable))
+
+alpha_max <- 1
+alpha_min <- 0.6
+alpha_vals <- c(
+  seq(alpha_max, alpha_min, length.out = 3), 
+  seq(alpha_max, alpha_min, length.out = 3),
+  alpha_max)
+
+anotacion <- glue::glue(
+  "En Colombia, la participación de <span style = 'color:#249206;'>renovables</span> <br>distintas a la <span style = 'color:#3667A6;'>hidroeléctrica</span> en 2022 fue<br>menor al <span style = 'color:#249206;'>2 por ciento</span>."
+)
+
+graph1 <- map1 %>% 
+  filter(year > 1999 & nombre != "Otras Renov." & country == "Colombia") %>% 
+  ggplot(mapping = aes(x = year, y = valor, fill = renovable, alpha = nombre)) +
+  geom_area(col = "white") +
+  scale_alpha_manual(values = alpha_vals) +
+  scale_fill_manual(values = c("#000000", "#249206", "#3667A6")) +
+  guides(
+    fill = guide_none(),
+    alpha = guide_legend(override.aes = list(fill = c(rep("#283227", 3),
+                                                      rep("#249206", 3),
+                                                      "#3667A6")))
+  ) +
+  annotate(geom = "richtext",
+           x = 2005,
+           y = 75,
+           label = anotacion,
+           size = 2.5,
+           label.color = NA
+  ) +
+  scale_x_continuous(breaks = 2000:2022) +
+  scale_y_continuous(n.breaks = 10) +
+  labs(title = "A: Electricidad por fuente primaria en Colombia",
+       subtitle = "Electricidad medida en Teravatios-Hora (TWh)",
+       x = NULL,
+       y = "Teravatios-Hora",
+       caption = "Fuente: Elaboración propia en base Our World in Data (OWD)") +
+  
+  theme_test() +
+  theme(plot.title = element_text(hjust = 0.0, size = 8),
+        plot.subtitle = element_text(hjust = 0.0, size = 7),
+        plot.caption = element_text(size=6, hjust=0.0, face="italic", color="black"),
+        axis.text.x = element_text(size = 6, angle = 45),
+        axis.text.y = element_text(size = 6),
+        axis.title.y = element_text(size = 7),
+        axis.title.x = element_text(size = 7),
+        legend.title = element_text(size=7, hjust = 0.5), 
+        legend.text = element_text(size=6),
+        legend.position = "none")
+
+
+map2 <- map1 %>% 
+  filter(year == 2022) %>% 
+  ungroup() %>% 
+  group_by(country) %>% 
+  mutate(prop = round(valor/sum(valor)*100,2)) %>% 
+  ungroup() %>% 
+  mutate(etiqueta = paste(nombre, prop, "%"),
+         etiquetas = ifelse(country == "Colombia" & renovable == 1, NA,
+                            ifelse(nombre == "Otras Renov.", NA, etiqueta)))
+
+
+alpha_vals <- c(
+  seq(alpha_max, alpha_min, length.out = 3), 
+  seq(alpha_max, alpha_min, length.out = 4),
+  alpha_max)
+
+graph2 <- map2 %>% 
+  ggplot(mapping = aes(x = as.factor(country), y = prop, fill = renovable, alpha = nombre)) +
+  geom_col(col = "white", width = 1) +
+  scale_alpha_manual(values = alpha_vals) +
+  scale_fill_manual(values = c("#000000", "#249206", "#3667A6")) +
+  guides(
+    fill = guide_none(),
+    alpha = guide_legend(override.aes = list(fill = c(rep("#283227", 3),
+                                                      rep("#249206", 4),
+                                                      "#3667A6")))
+  ) +
+  geom_text(
+    data = map2,
+    aes(label = etiquetas),
+    position = position_stack(vjust = 0.70),
+    col = 'white',
+    size = 2,
+    fontface = 'bold'
+  ) +
+  labs(title = "B: Participación porcentual por fuente - 2022",
+       subtitle = "Comparación entre Colombia y el mundo",
+       x = NULL,
+       y = "Porcentaje") +
+  theme_test() +
+  theme(plot.title = element_text(hjust = 0.0, size = 8),
+        plot.subtitle = element_text(hjust = 0.0, size = 7),
+        plot.caption = element_text(size=6, hjust=0.0, face="italic", color="black"),
+        axis.text.x = element_text(size = 6, angle = 0),
+        axis.text.y = element_text(size = 6),
+        axis.title.y = element_text(size = 7),
+        axis.title.x = element_text(size = 7),
+        legend.title = element_text(size=7, hjust = 0.5), 
+        legend.text = element_text(size=6),
+        legend.position = "none")
+
+wrap_plots(graph1, graph2, ncol = 2, widths = c(1, 0.5))
+
+
+```
+
+## Evolución reciente de las energías renovables en Colombia
+
+La participación de FNCER es muy reducida en Colombia, sin embargo, gracias a los incentivos contemplados en las leyes 1715 de 2014 y 2099 de 2015, algunas de ellas han experimentado un rápido crecimiento en los últimos años.\
+Dichos incentivos, consisten principalmente en instrumentos fiscales, cuyo objetivo garantizar mayores márgenes de rentabilidad en los primeros años de funcionamiento del proyecto, a continuación se presentan los principales incentivos contemplados en dichas leyes:
+
+- Deducción del $50\%$ de la inversión realizada en el impuesto de renta, en un periodo no mayor a 15 años. 
+- Exención del impuesto de IVA en la adquisición de bienes para el desarrollo de proyectos de generación con FNCE y gestión eficiente de la energía.
+- Exención del pago de los derechos arancelarios de importación en maquinaria y demás equipos necesarios para la inversión o reinversión en proyectos de FNCER.
+  
+  - Con la modificación a partir de la ley 2099 de 2021, solo se eliminan los derechos arancelarios en maquinaria, equipos e insumos que no son producidos en el país y cuya única manera de acceder a ellos es a partir de la importación de los mismos.
+
+- Depreciación acelerada de activos, aquellos proyectos para la generación de energía con FNCER, contarán con el régimen de depreciación acelerada en un monto máximo anual del 33.33%.
+
+Además de estos incentivos, cuyo objetivo es viabilizar la inversión del sector privado, al generar un periodo de recupero más corto y reducir el monto de la inversión inicial, dichas leyes prevén el establecimiento del Fondo de Energías No Convencionales y Gestión Eficiente de la Energía (FENOGE), cuyo objetivo es canalizar los recursos, que el sector público destine a proyectos de inversión, para acelerar el proceso de transición energética.
+
+Entre los proyectos que se han financiado a través del FENOGE, los de mayor relevancia han sido:
+
+- *Programa de Eficiencia Energética Caribe Energía Sostenible (PEECES)*, el cual busca apoyar financieramente a familias de estratos 1 y 2 en la región caribe  para reemplazar neveras de baja eficiencia.
+- *Be energy*, a través del cual se instalaron paneles solares en viviendas de San Andrés, Providencia y Santa Catalina.
+- *Iluminando al Pacifico*, que busca reemplazar bombillas halógenas, fluorescentes o incandescentes por bombillas LED en viviendas de estratos 1 y 2 del pacifico colombiano.
+- *Respira Pacifico*, que busca reemplazar estufas de leña por estufas ecoeficientes en viviendas de estratos 1 y 2 del pacífico colombiano.
+- *Mas Hidrogeno Colombia*, en el que se incluyen *H2 Movilidad* y *+H2 Colombia*, cuyo objetivo es dinamizar el mercado del hidrogeno en alianza con Ecopetrol S.A. y bancos internacionales, que ofrecen financiamiento para la investigación de soluciones basadas en hidrogeno.
+- *Fondo Todos Somos PAZcífico*, que busca mejorar las instalaciones eléctricas internas e implementar medidas de Uso Racional de Energía en los hogares del pacifico colombiano.
+- *Soluciones Energéticas Integrales*, el cual aborda problemáticas energéticas en las zonas más afectadas por el conflicto armado y en aquellas que cuentan con Programas de Desarrollo con Enfoque Territorial (PDET).
+- *Con Energía para la gente*, cuyo objetivo es instalar paneles solares en colegios y hospitales de regiones vulnerables y que ya han llegado a municipios de Pereira, Choco, La Guajira y Cesar.
+
+Además de estos programas de atención directa, el FENOGE abrió líneas de crédito para la financiación de proyectos de FNCER, que surjan de actores privados, comunidades locales o de la ciudadanía en general y que pueden ser reembolsables, reembolsables parcialmente o no reembolsables.
+
+Los incentivos a la inversión contemplados en la ley, y los proyectos públicos financiados a través del FENOGE, han conducido a un crecimiento de todas las renovables, las cuales han ganado participación en la matriz eléctrica, pero, en línea con las tendencias globales de los flujos de inversión en Energías Renovables, la energía solar fotovoltaica (PV) ha tenido un crecimiento exponencial (Gráfico 3.A).\
+Esto puede deberse no solo al potencial energético de Colombia en energía solar, sino también a particularidades vinculadas a la rentabilidad y riesgo de los proyectos.
+
+### Gráfico 3: Crecimiento de la generación de electricidad por fuente en Colombia
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, fig.pos='H', fig.height=3.2, fig.width=7, fig.align='center'}
+
+
+
+crecimientoFuentes <- source_elec %>% map(.f = ~{
+  
+  p <- Colombia %>% 
+    filter(tipo == .x & country == "Colombia" & !is.na(valor) & year > 1999) %>% 
+    mutate(lag1 = lag(valor), 
+           tasa = (valor/lag1 - 1)*100)
+  
+  p <- p[(dim(p)[1]-3):dim(p)[1], ]
+  
+  p <- p %>% 
+    mutate(indice = valor/valor[1]*100)
+})
+
+crecimientoFuentes <- crecimientoFuentes %>% bind_rows()
+
+crecimientoFuentes <- crecimientoFuentes %>% 
+  mutate(renovable = case_when(
+    tipo == "biofuel_electricity" ~ 1,
+    tipo == "hydro_electricity" ~ 2, 
+    tipo == "solar_electricity" ~ 1, 
+    tipo == "wind_electricity" ~ 1,
+    tipo == "other_renewable_exc_biofuel_electricity" ~ 1,
+    tipo == "coal_electricity" ~ 0,
+    tipo == "gas_electricity" ~ 0,
+    tipo == "oil_electricity" ~ 0),
+    nombre = case_when(
+      tipo == "biofuel_electricity" ~ "Bioenergía",
+      tipo == "hydro_electricity" ~ "Hidroeléct.", 
+      tipo == "solar_electricity" ~ "Solar", 
+      tipo == "wind_electricity" ~ "Eólica", 
+      tipo == "coal_electricity" ~ "Carbón",
+      tipo == "gas_electricity" ~ "Gas",
+      tipo == "oil_electricity" ~ "Oil",
+      tipo == "other_renewable_exc_biofuel_electricity" ~ "Otras Renov."))
+
+crecimientoFuentes <- crecimientoFuentes %>% 
+  mutate(nombre = factor(nombre, levels = c("Carbón", "Oil", "Gas", 
+                                                  "Bioenergía", "Solar", "Eólica", "Otras Renov.",
+                                                  "Hidroeléct.")))
+
+crecimientoFuentes <- crecimientoFuentes %>% 
+  mutate(logs = log(indice))
+
+
+vec_nombres <- crecimientoFuentes$nombre
+
+crecimientos <- vec_nombres %>% 
+  map(.f = ~{
+    
+    p <- crecimientoFuentes %>% 
+      ungroup() %>% 
+      filter(nombre == .x) %>% 
+      summarise(crecimiento = (indice[4] / indice[1] - 1)*100,
+                nombre = .x)
+    
+  })
+
+crecimientos <- crecimientos %>% bind_rows()
+
+crecimientos <- crecimientos %>% 
+  distinct()
+
+crecimientoFuentes <- crecimientoFuentes %>% 
+  left_join(y = crecimientos,
+            by = c("nombre" = "nombre"))
+
+crecimientoFuentes <- crecimientoFuentes %>% 
+  mutate(crecimiento = round(crecimiento, 1),
+         etiqueta = ifelse(crecimiento > 0, paste(nombre, "+", crecimiento, "%"),
+                           paste(nombre, crecimiento, "%")))
+
+etiquetas <- unique(crecimientoFuentes$etiqueta)
+
+alpha_max <- 1
+alpha_min <- 0.6
+alpha_vals <- c(
+  seq(alpha_max, alpha_min, length.out = 3), alpha_max)
+
+graph3 <- crecimientoFuentes %>% 
+  filter(tipo != "other_renewable_exc_biofuel_electricity" & 
+           renovable == 1 | renovable == 2) %>% 
+  ggplot(mapping = aes(x = year, 
+                       y = indice, 
+                       col = as.factor(renovable), 
+                       alpha = nombre,
+                       linetype = nombre)) +
+  geom_line(show.legend = F) +
+  geom_point(show.legend = F) +
+  geom_hline(yintercept = 100, linetype = "dashed", alpha = 0.5) +
+  scale_alpha_manual(values = alpha_vals) +
+  scale_color_manual(values = c("#249206", "#3667A6")) +
+  scale_linetype_manual(values = c("longdash", "dotdash", rep("solid", 2))) +
+  labs(title = NULL,
+       subtitle = "A: Renovables", 
+       y = "Índice generación (2019 = 100)",
+       x = NULL,
+       caption = NULL) +
+  annotate(geom = "text",
+           x = c(2020, rep(2020.5,3)),
+           y = c(75, 35, 125, 220),
+           col = c("#3667A6", "#249206", "#249206","#249206"),
+           alpha = c(1, 0.6, 1, 0.8),
+           label = c(etiquetas[2], etiquetas[6], etiquetas[1], etiquetas[7]),
+           size = c(rep(3,4))) +
+  theme_test() +
+  theme(plot.title = element_text(hjust = 0.0, size = 8),
+        plot.subtitle = element_text(hjust = 0.0, size = 7),
+        plot.caption = element_text(size=6, hjust=0.0, face="italic", color="black"),
+        axis.text.x = element_text(size = 6, angle = 0),
+        axis.text.y = element_text(size = 6),
+        axis.title.y = element_text(size = 7),
+        axis.title.x = element_text(size = 7),
+        legend.title = element_text(size=7, hjust = 0.5), 
+        legend.text = element_text(size=6),
+        legend.position = "none")
+
+
+
+alpha_max <- 1
+alpha_min <- 0.3
+alpha_vals <- c(
+  seq(alpha_max, alpha_min, length.out = 3))
+
+graph4 <- crecimientoFuentes %>% 
+  filter(renovable == 0) %>% 
+  ggplot(mapping = aes(x = year, 
+                       y = indice, 
+                       col = as.factor(renovable), 
+                       alpha = nombre,
+                       linetype = nombre)) +
+  geom_line(show.legend = F) +
+  geom_point(show.legend = F) +
+  geom_hline(yintercept = 100, linetype = "dashed", alpha = 0.5) +
+  scale_alpha_manual(values = alpha_vals) +
+  scale_color_manual(values = c("#000000")) +
+  scale_linetype_manual(values = c("longdash", "dotdash", "solid")) +
+  labs(#title = "Crecimiento de oferta por fuente - No Renovables",
+    subtitle = "B: No renovables",
+       y = NULL,
+       x = NULL,
+       caption = "Fuente: Elaboración propia en base a OWD.") +
+  annotate(geom = "text",
+           x = c(2020.5, rep(2021.5,2)),
+           y = c(87, 85, 97),
+           col = c("#000000"),
+           alpha = c(0.65, 1, 0.40),
+           label = c(etiquetas[5], etiquetas[3], etiquetas[4]),
+           size = 3) +
+  theme_test() +
+  theme(plot.title = element_text(hjust = 0.0, size = 9),
+        plot.subtitle = element_text(hjust = 0.0, size = 7),
+        plot.caption = element_text(size=6, hjust=1, face="italic", color="black"),
+        axis.text.x = element_text(size = 6, angle = 0),
+        axis.text.y = element_text(size = 6),
+        axis.title.y = element_text(size = 7),
+        axis.title.x = element_text(size = 7),
+        legend.title = element_text(size=7, hjust = 0.5), 
+        legend.text = element_text(size=6),
+        legend.position = "none")
+
+graph34 <- graph3 + graph4
+
+graph34
+
+```
+
+Un informe reciente de la Agencia Internacional de Energías Renovables (IRENA por sus siglas en ingles), comparo a partir de la opinión de expertos los costos de financiamiento en proyectos solares y eólicos para la generación de electricidad, los resultados para Latinoamérica, muestran una diferencia marginal, siendo del $6.4\%$ en proyectos eólicos y del $6.6\%$ en proyectos solares, es decir, no hay diferencias significativas en la tasa de descuento que se utiliza para evaluar la rentabilidad de los proyectos.[@IRENA2023]\
+La principal ventaja de la energía solar respecto a las otras energías renovables, está en el costo inicial del proyecto (vease gráfico abajo), las facilidades logísticas para transportar e instalar los paneles solares, la factibilidad de instalación en zonas tanto urbanas como rurales y la facilidad para incorporar esta energía en el sistema eléctrico, ha permitido que los inversores privados enfaticen el aprovechamiento de los incentivos fiscales a través de la energía solar, la cual presenta una inversión inicial menor, no requiere de inversiones significativas para que se incorpore al sistema eléctrico por poder ubicarse cerca de las zonas de consumo y el costo por kilovatio una vez esté en funcionamiento el proyecto, es similar al de la energía eólica.
+
+![Gráfico 4, fuente IRENA 2021](D:/GERARDO/Documents/Escritorio/FLACSO/Tesis/Pasantia/costIRENA.png){width="75%" height="75%"}
+
+En el corto plazo, no hay expectativas de que el crecimiento de la energía solar se vea disminuida en Colombia, esto a partir del informe realizado por la Asociación de Energías Renovables (SER Colombia), que presenta el estado de los 80 proyectos en FNCER vigentes, los cuales entrarían en operación entre 2023 y 2024, y de los cuales 78 son de energía solar y los dos restantes de energía eólica.
+
+## Implicancias del crecimiento exponencial de la energía solar
+
+El aprovechamiento de los recursos renovables, es el objetivo fundamental de la TEJ, sin embargo, la falta de planificación en el avance de estas energías, puede tener consecuencias adversas que es importante destacar a partir de la experiencia de otros países.
+
+Una de las debilidades de la energía solar y en menor medida de la energía eólica, es su intermitencia y poca flexibilidad, las energías convencionales tienen la desventaja de ser el principal impulsor del cambio climático y de someter al sistema eléctrico a la volatilidad de los precios internacionales, pero lo que permiten, es controlar la generación de energía en función de la demanda.\
+En cambio, la energía solar y eólica, es transmitida a medida que se genera, pudiendo presentar descalces entre la generación y el consumo.
+
+Estas dificultades, estarían en alguna medida solventadas a partir del avance en baterías o tecnologías de almacenamiento de energía, las cuales pueden ser alcanzados en el mediano plazo, pero ausentes por ahora debido a sus altos costos.
+
+Un país que actualmente tiene dificultades en el sistema eléctrico debido al crecimiento exponencial de la energía solar, es Chile, entre 2015 y 2022 paso de generar 1.37 Teravatios-Hora (TWh) a 14.52 TWh, lo que equivale un crecimiento anual del `r round((((14.52/1.37)+1)^(1/7)-1)*100,2)` $\%$. Chile cuenta con dos grandes redes de transmisión, zona norte y zona centro-sur, la generación de energía solar fotovoltaica está concentrada en la zona norte del país, y ha generado problemas debido al desfase entre el tiempo de instalación de una planta solar con respecto a la infraestructura de transmisión para conectar la zona norte con el centro y sur del país.\
+La energía que no se consume en la zona norte, no está pudiendo ser transferida, ese exceso de oferta en la zona norte, ha generado que el precio de la energía sea igual a cero durante ciertas horas del día.
+
+Esto no implica, que la generación de electricidad en la zona norte sea $100\%$ renovable, fuera de las horas de mayor generación de las plantas solares (horas luz del día), es decir, en horas de la noche y de la madrugada donde existe mayor consumo residencial, no se puede suministrar energía solar, debiendo recurrir a la generación de energía de fuentes convencionales.
+
+Los efectos adversos del exceso de capacidad en la energía solar, no solo afectan a las inversiones realizadas en energía solar, tienen repercusión sobre las otras fuentes que solo pueden transmitir energía en los momentos en que la energía solar está ausente.\
+El caso de Chile, es un ejemplo de las consecuencias adversas por la falta de planificación en los procesos de transición energética, si bien muchas de las soluciones solares que se han desarrollado en Colombia, buscan atender Zonas No Interconectadas (ZNI) y el Sistema Interconectado Nacional (SIN) no está separado como en Chile, es necesario resaltar que el objetivo en la transición energética dentro del sector eléctrico, es diversificar las fuentes, evitando la preponderancia de alguna de ellas, sobre todo de aquellas que dependen del clima como la solar y la eólica.
+
+El gráfico 5 muestra el comportamiento durante el día de las plantas solares y eólicas en operación durante 2022 en Colombia, como se puede observar, el factor de planta es menor al $30\%$, y en el caso de la solar, entre las 18 y las 6, la generación de energía es igual a cero.[^4]
+
+[^4]: Las operaciones solares corresponden a 25 plantas y la energía eólica a la planta Jepirachi 1-15.\
+El factor de planta se calcula de acuerdo a la siguiente formula: $Factor \hspace{0.1cm} de \hspace{0.1cm} planta = \frac{Energia \hspace{0.1cm} Generada}{Capacidad \hspace{0.1cm} Efectiva}$
+
+### Gráfico 5: Comportamiento medio por hora de plantas solares y eólicas en operación durante 2022 en Colombia
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, fig.pos='H', fig.height=3, fig.width=7, fig.align='center'}
+
+fotovoltaica <- read.csv2("fotovoltaica.csv")
+
+# Capacidad efectiva neta solar = 278.66
+# Capacidad efectiva neta eolica = 18.42
+
+anotacion1 <- glue::glue("Capacidad Efectiva Neta <span style = 'color:#008B0F;'>278.66</span> MW <br> Factor de Planta <span style = 'color:#008B0F;'>0.250</span>")
+
+anotacion2 <- glue::glue("Capacidad Efectiva Neta <span style = 'color:#5A00C1;'>18.42</span> MW <br> Factor de Planta <span style = 'color:#5A00c1;'>0.208</span>")
+
+#008B0F
+#C1B500
+
+fotovoltaica %>% 
+  ggplot(mapping = aes(x = Hora)) +
+  geom_line(aes(y = Media_Solar), col = "#008B0F", linewidth = 1) +
+  geom_line(aes(y = Media_Eolica*20), col = "#5A00C1", linewidth = 1) +
+  scale_y_continuous(sec.axis = sec_axis(trans = ~./20, name = "MW - Eólica",
+                                         breaks = 
+                                         seq(from = 0, to = 10, by = 1)), n.breaks = 10) +
+  scale_x_continuous(breaks = 1:24) +
+  labs(title = NULL,
+       y = "MW - Solar",
+       x = "Hora del día") +
+  annotate(geom = "richtext",
+           x = c(4, 21),
+           y = c(150, 150),
+           label = c(anotacion1, anotacion2),
+           size = 2.5) +
+  theme_test() +
+  theme(plot.title = element_text(hjust = 0.5, size = 9),
+        plot.subtitle = element_text(hjust = 0.0, size = 7),
+        plot.caption = element_text(size=6, hjust=0.0, face="italic", color="black"),
+        axis.text.x = element_text(size = 6, angle = 0),
+        axis.text.y = element_text(size = 6),
+        axis.title.y = element_text(size = 8, color = "#008B0F"),
+        axis.title.y.right = element_text(size = 8, color = "#5A00C1"),
+        axis.title.x = element_text(size = 7),
+        legend.title = element_text(size=7, hjust = 0.5), 
+        legend.text = element_text(size=6),
+        legend.position = "none")
+
+```
+
+El principal problema en torno a la variabilidad de la generación solar y eólica, es que generan mayores costos de operación y planificación, puesto que se requiere que otro tipo de fuente provea energía cuando el sol y el viento no están. La rapidez e incertidumbre con que varían estas fuentes, aumenta el costo de operación del sistema eléctrico, porque las centrales térmicas de respaldo tienen tiempos mínimos de encendido y apagado, y la necesidad de estar rápidamente disponibles, obliga a mantenerlas encendidas todo el tiempo pero operando fuera del despacho económico durante gran parte del día.
+
+Por lo anterior, las energías solar y eólica, deben ser pensadas como fuentes de respaldo al sistema eléctrico, muy factibles para atender Zonas No Interconectadas (ZNI) del país, mas no como la principal fuente para la generación de energía eléctrica.
+
+## Alternativas renovables de alta fiabilidad
+
+No todas las FNCER presentan problemas de intermitencia, particularmente la geotermia y la biomasa son fuentes energéticas estables, con factores de planta considerablemente mayores a la eólica y la solar, y mayor fiabilidad de suministro las 24 horas del día.\
+En el presente apartado se enfatizará sobre la geotermia, buscando dar una noción de sus ventajas, su potencial en Colombia y la experiencia de otros países que han logrado desarrollarla.
+
+La geotermia es el calor contenido en el subsuelo, se considera una energía renovable debido a su inagotabilidad, comparable con el sol o el viento, este recurso puede clasificarse en baja o alta entalpía en función de su temperatura, yacimientos de calor menores a los $50^o C$ se consideran de baja entalpía y mayores a $100^o C$ de alta entalpía.\
+Los usos de dicha energía son múltiples, siendo los más difundidos en cuestiones relacionadas con la demanda de energía, la calefacción y la generación de electricidad [@worldBankGeothermal].
+
+La generación de electricidad a través de calor geotérmico, requiere que los yacimientos sean de alta entalpía, su principal ventaja aparte de ser una energía renovable, reside en su capacidad para generar electricidad de manera estable las 24 horas del día a un costo relativamente bajo, además, varias de las tecnologías para su aprovechamiento ya se encuentran en una etapa madura [@IRENAcost].\
+Aunque presenta ventajas en materia de estabilidad y el potencial geotérmico a nivel mundial es considerablemente alto, al punto que 40 países podrían satisfacer su demanda de energía haciendo uso solamente de este recurso [@worldBankGeothermal], en 2021 la participación de la geotermia dentro de las renovables fue solo del $1.2\%$, con una producción de 95 mil GWh.
+
+La subutilización de los recursos geotérmicos, se debe por un lado, a la localización de los recursos, no todos los países cuentan con manifestaciones superficiales de calor, como volcanes o aguas termales que den una noción de la existencia de capacidad geotérmica, por otro lado, desde el punto de vista del inversor, el desarrollo de la geotermia es una actividad riesgosa e intensiva en capital, que aunado a las reducciones de costos de energías alternativas, disuaden al inversor si no cuenta con incentivos específicos para su desarrollo.
+
+Comparado con otras energías alternativas, una de las principales dificultades para el desarrollo geotérmico esta en el conocimiento del recurso, es relativamente sencillo determinar la capacidad de generación de electricidad de una granja solar o eólica, debido a que son recursos fácilmente medibles, la geotermia en cambio, requiere procesos de perforación para eliminar la incertidumbre respecto a la capacidad del recurso.\
+Esa exploración inicial, es la variable que eleva significativamente los costos y que la hacen una inversión riesgosa, similar a los procesos de exploración en petróleo y gas, la determinación de la existencia del recurso geotérmico es un costo hundido que la ubica como la segunda energía renovable con mayores costos de instalación por kilovatio-hora detrás de la energía termo solar de concentración [@IRENAcost].
+
+![Gráfico 6, fuente Banco Mundial](D:\\GERARDO\\Documents\\Escritorio\\FLACSO\\Tesis\\Pasantia\\Etapas_GeotermProject.png){width="80%" height="80%"}
+
+Latinoamérica, aun estando dentro del cinturón de fuego del pacifico, no tiene desarrollos importantes en geotermia, siendo los únicos países con plantas operativas Chile, México, El Salvador, Costa Rica, Guatemala y Nicaragua. Pero aun en estos, la participación de la geotermia en la generación de energía es reducida.
+
+Colombia, a través del Servicio Geológico Colombiano (SGC), llevo adelante en 2020 una estimación del potencial geotérmico del país. Identificando 21 áreas geotérmicas, se estimó la potencia eléctrica en 1170.20 MWe, la mayoría de las áreas se ubican en torno a la cordillera central y se pueden categorizar como *Green Fields* [@esmapRiesgo], es decir, campos vírgenes que requieren ser desarrollados desde el inicio.
+
+Los proyectos comerciales de mayor avance en Colombia, se han desarrollado en el Nevado del Ruiz y en la frontera con Ecuador en la zona Chiles-Tufiño-Cerro Negro, el primero a través de la alianza entre ISAGEN S.A. y Toshiba Corporation, quienes llevaron adelante estudios de prefactibilidad para tener una planta con capacidad de 50 MW y el segundo un proyecto binacional entre Colombia y Ecuador para una planta de 330 MW, de los cuales 138 MW serian para Colombia [@salazarSaid].\
+Otros desarrollos pilotos de menor escala, se han llevado a cabo en los llanos orientales, aprovechando las zonas de explotación petrolera como Campo la Rumba y Campo Maracas en Casanare, y Campo Chichimene en el Meta.
+
+Si bien en Colombia ya existe un reconocimiento del recurso y en las leyes de incentivo a las FNCER se tiene en cuenta la geotermia, no se contemplan las diferencias respecto a otras renovables en terminos de fiabilidad y de inversión inicial, lo que restringe las posibilidades de su desarrollo.\
+A continuación, se presenta un recuento de las estrategias que otros países han llevado adelante, lo cual puede indicar una hoja de ruta o al menos dar cuenta del conjunto de restricciones a superar.
+
+Reconociendo el alto riesgo durante las etapas iniciales en el desarrollo del recurso geotérmico, la ESMAP realizo un estudio para comparar las estrategias de mitigación de riesgo que han llevado adelante distintos [@esmapRiesgo].\
+La entidad identifico cuatro tipos de incentivos que han tenido grados de éxito relativos, pero que han sido los más usuales para el desarrollo de estos recursos:
+
+- **Inversión pública**, el desarrollo del recurso en Filipinas y México (productores 2 y 4 del mundo respectivamente) fue llevado adelante a través de recursos públicos, la Compañía Nacional de Petróleos de Filipinas (PNOC por sus siglas en ingles), creo en 1976 la subsidiaria Energy Development Corporation para explorar los recursos geotérmicos del país, el impulso para destinar recursos públicos a esta actividad con considerables riesgos financieros, fue el shock petrolero de los 70's que incremento considerablemente los costos de generación de energía, siendo Filipinas un país importador de petróleo. En México, el desarrollo fue llevado adelante por la Comisión Federal de Electricidad (CFE) que en 1959 ponía la primera planta piloto en el estado de Hidalgo, aunque dicha iniciativa no resulto rentable, motivo al gobierno a seguir explorando el recurso hasta tener las cinco plantas actuales con capacidad de 976 MW de las cuales cuatro son operadas por la empresa pública CFE.\
+En línea con lo propuesto por [@mazzucato2014estado], las características del financiamiento estatal son distintas a las que se pueden encontrar en el sector privado, el cual exige mayor rentabilidad y en más corto plazo, el *capital paciente* para financiar proyectos de largo plazo como los que caracterizan a la geotermia, suele estar en el Estado, es así que una tercera parte de los MW geotérmicos desarrollados a 2016, correspondían a proyectos llevados en su totalidad con recursos públicos.
+
+- **Perforación con esquema de costos compartidos**, este es el incentivo más usual en aquellos países con desarrollo relativo en geotermia, puede diferenciarse en dos tipos de esquema, **i.** Costos iniciales compartidos, en el que el sector público apoya la inversión del sector privado para el desarrollo del recurso con transferencias y financiamiento y **ii.** Exploración pública y desarrollo privado, en el que el sector público se encarga de desarrollar las etapas *upstream*, las cuales contienen la mayor parte de los riesgos y posteriormente licitan las etapas *downstream* a privados.
+
+  - Japón y Estados Unidos han desarrollado su capacidad geotérmica a través del primer esquema, muestra de la relevancia de estos incentivos en etapas iniciales, es que cuando a comienzos de los 2000 Japón decidido dejar de apoyar las inversiones por considerarlo un sector maduro, la capacidad instalada dejo de crecer. Adicionalmente, el trabajo conjunto entre sector público y el sector privado, permite que el Estado tenga un mayor conocimiento del recurso, así lo hizo Estados Unidos al condicionar la ayuda en las etapas de exploración, a que la información de la exploración fuera compartida con el Estado para futuros proyectos.\
+Para regiones en desarrollo, tambien se ha generado este sistema de incentivos, desde 2010 organismos multilaterales presentan un apoyo contingente en función del éxito o fracaso de las exploraciones para Latinoamérica y África, lo que ha permitido el desarrollo en Kenia y Uganda.
+  - Con el segundo esquema se ha desarrollado la geotermia en Nueva Zelanda, Indonesia, Turquía y Nicaragua. En Nueva Zelanda el $17\%$ de la electricidad proviene de la geotermia, habiendo desarrollado la regulación en 1953 y la producción en 1958 (esta primera con recursos completamente públicos), acumulo 20 años de exploración que le permitió aglomerar información respecto a la capacidad del recurso en el país y con ello, reducir los riesgos de privados para la instalación de plantas.
+  - Otro tipo de experiencias en el desarrollo de la geotermia que ha contado con el trabajo conjunto del sector público y el sector privado, es el desarrollo inicial y completo por parte del sector público y la posterior privatización, así a ocurrido con Filipinas y Nicaragua, siendo el primero el caso más exitoso, pues consistió en la conformación de un gobierno corporativo y la venta de acciones en el mercado bursátil, que permiten que en la actualidad, Filipinas desarrolle proyectos geotérmicos en otros países.
+  
+- **Póliza de seguro de recursos geotérmicos**, este mecanismo busca asegurar la productividad de un pozo o un desarrollo geotérmico en términos de MW, caudal de energía o entalpía, las dificultades para desarrollar este mecanismo esta en lo incipiente que es el sector a nivel global, por lo que la diversificación del riesgo es reducida y las primas de seguro que deben pagar los desarrolladores considerablemente altas.\
+Este mecanismo ha sido desarrollado con éxito relativo en Francia y Alemania, en Alemania sin embargo, se discute su éxito, debido a que el país cuenta con precios de venta mínimos para este tipo de proyectos, que mejoran significativamente los márgenes de ganancia en los primeros años de operación y puede ser lo que realmente haya incentivado a los inversores a desarrollar el recurso.
+
+- **Incentivos fiscales aplicables a las etapas iniciales**, consisten en exenciones arancelarias e impositivas como las que actualmente existen en Colombia y que reducen el monto de capital de riesgo inicial, una de las ventajas de este tipo de incentivos, es que no requiere de recursos ficales importantes más allá de la perdida de algunos ingresos, sin embargo, sus resultados son muy marginales y debieran verse más como un complemente a otros incentivos, que como el único mecanismo para el desarrollo del sector.
+
+La inversión en geotermia requiere grandes montos de capital en la etapa inicial de los proyectos, por ello, las garantías, subsidios o prestamos gubernamentales, que apalanquen el financiamiento de las etapas tempranas, son más útiles para su desarrollo que los incentivos impositivos, pues muchos de ellos, solo pueden ser percibidos cuando los proyectos son funcionales y el riesgo ya fue asumido por el sector privado.
+
+Una revisión al desarrollo de los 10 principales productores de electricidad a través de geotermia, Estados Unidos, Indonesia, Filipinas, Turquía, Nueva Zelanda, México, Kenia, Italia, Islandia y Japón, permite concluir lo fundamental del financiamiento estatal, pues en ninguno, el recurso se desarrolló con la sola regulación e incentivos fiscales al sector privado.
+
+Este recurso, resulta relevante para Colombia no solo por poseerlo y brindar estabilidad en el suministro de energía eléctrica, también por el hecho de que muchas de las zonas potenciales, ubicadas la mayoria en la cordillera central, resultan fáciles de conectar al Sistema Interconectado Nacional (SIN), una ventaja que no estaba presente en países como Australia o Chile, que requerían importantes inversiones de transmisión para poder viabilizar los recursos geotérmicos.
+
+## Conclusiones
+
+El sistema eléctrico colombiano, cuenta con una matriz de generación significativamente mas limpia que la representativa a nivel mundial, por lo que sus compromisos de reducción de emisiones en el sector, son reducidos.
+
+La transición energética en el sector eléctrico colombiano, es una estrategia que reduciría la vulnerabilidad del sistema por su actual concentración en las fuentes hidroeléctricas, con esa intención, son mas justificables los esfuerzos e incentivos que se otorguen para integrar las FNCER al SIN.
+
+El crecimiento exponencial de los ultimos años en la energía solar fotovoltaica, requiere atención y planificación pública, para evitar efectos adversos en el sistema por excesos de capacidad durante ciertas horas del día, los cuales disuadirian la inversión en otras energías, ante los riesgos de precios o la imposibilidad de despachar la energía producida.
+
+Debido a las caracteristicas de algunas de las FNCER, es importante que la transición consista en el desarrollo simultaneo de varias de ellas, de forma que exista una diversificación en el sector renovable y se eviten problemas de intermitencia en el suministro de eléctricidad.
+
+El desarrollo simultaneo de las FNCER, requiere esquemas de incentivos diferenciados, teniendo en cuenta los distintos riesgos financieros, vinculados al costo de instalación y la exploración de los recursos.
+
+Entre las fuentes no convencionales con alta fiabilidad de suministro, Colombia tiene desarrollos relevantes en hidroeléctrica y bioenergía, alternativas con alto potencial como la geotermia, requieren de una mayor inversión estatal en función de como ha sido su desarrollo en paises con niveles significativos de capacidad instalada.
+
+Debido a la similitud de la geotermia con el sector de hidrocarburos en los procesos exploratorios, el potencial en esta fuente se debe no solo a la existencia del recurso, tambien a la tenencia del capital humano y tecnologico necesario para su desarrollo, existente en empresas del sector de hidrocarburos como Ecopetrol S.A.\
+Adicionalmente, la ubicación de las zonas geotérmicas, facilita su vinculación al SIN, reduciendo los costos para la puesta en funcionamiento de estos proyectos.
+
+Teniendo en cuenta que el Estado colombiano se ha caracterizado por regular, y no por ejecutar acciones en sectores como el energético, para el desarrollo de la geotermia son relevantes los casos de Japón y Nueva Zelanda, cuyo desarrollo en el sector respondio al trabajo mancomunado del sector público con el sector privado. Además, Nueva Zelanda cuenta con experiencias interesantes con las comunidades *maorí*, las cuales exceden este informe, pero sin duda pueden ser un aporte valioso, en cuanto a las licencias para el desarrollo del recurso y el trabajo con la comunidad.
+
+\pagebreak
+
+## Bibliografía
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
