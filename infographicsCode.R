@@ -8,10 +8,22 @@ library(glue)
 library(ggtext)
 library(patchwork)
 
-owd <- read.csv("owid-energy-data.csv")
+owd <- read.csv("owid-energy-data.csv") # Esta base de datos esta disponible en https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv
+
+# Para extraer esos datos desde la ejecucion del codigo correr las lineas 14 a 18:
+# url <- https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv
+# filename <- basename(url)
+# download.file(url = url,
+#              destfile = str_c("rmd/bases/worldPowerDatabase/",filename,sep = ""), # En destfile, si solamente se pone 'filename' se descarga la base en tu directorio de trabajo
+#              mode = "wb")
+
+
+# Filtro de Colombia y el promedio mundial
 
 paises <- c("Colombia",
             "World")
+
+# Utilizamos map para generar una iteracion en el filtro
 
 consumoElect <- paises %>% map(.f = ~{
   
@@ -36,6 +48,8 @@ consumoElect <- consumoElect %>%
   mutate(iso_code = ifelse(iso_code == "", "World", iso_code),
          relleno = ifelse(iso_code == "COL", 1,
                           ifelse(iso_code == "World", 2, 0)))
+
+# Primer gráfico
 
 graph5 <- consumoElect %>% 
   ggplot(mapping = aes(x = reorder(iso_code, mediana), y = perCapita, fill = as.factor(relleno))) +
@@ -83,6 +97,8 @@ CO2Emissions <- CO2Emissions %>%
   mutate(iso_code = ifelse(iso_code == "", "World", iso_code),
          relleno = ifelse(iso_code == "COL", 1,
                           ifelse(iso_code == "World", 2, 0)))
+
+# Segundo gráfico
 
 graph6 <- CO2Emissions %>% 
   ggplot(mapping = aes(x = reorder(iso_code, mediana), y = perCapita, fill = as.factor(relleno))) +
@@ -168,46 +184,6 @@ alpha_vals <- c(
 anotacion <- glue::glue(
   "En Colombia, la participación de <span style = 'color:#249206;'>renovables</span> <br>distintas a la <span style = 'color:#3667A6;'>hidroeléctrica</span> en 2022 fue<br>menor al <span style = 'color:#249206;'>2 por ciento</span>."
 )
-
-graph1 <- map1 %>% 
-  filter(year > 1999 & nombre != "Otras Renov." & country == "Colombia") %>% 
-  ggplot(mapping = aes(x = year, y = valor, fill = renovable, alpha = nombre)) +
-  geom_area(col = "white") +
-  scale_alpha_manual(values = alpha_vals) +
-  scale_fill_manual(values = c("#000000", "#249206", "#3667A6")) +
-  guides(
-    fill = guide_none(),
-    alpha = guide_legend(override.aes = list(fill = c(rep("#283227", 3),
-                                                      rep("#249206", 3),
-                                                      "#3667A6")))
-  ) +
-  annotate(geom = "richtext",
-           x = 2005,
-           y = 75,
-           label = anotacion,
-           size = 2.5,
-           label.color = NA
-  ) +
-  scale_x_continuous(breaks = 2000:2022) +
-  scale_y_continuous(n.breaks = 10) +
-  labs(title = "Electricidad por fuente primaria en Colombia",
-       subtitle = "Electricidad medida en Teravatios-Hora (TWh)",
-       x = NULL,
-       y = "Teravatios-Hora",
-       caption = "Fuente: Elaboración propia en base Our World in Data (OWD)") +
-  
-  theme_test() +
-  theme(plot.title = element_text(hjust = 0.0, size = 8),
-        plot.subtitle = element_text(hjust = 0.0, size = 7),
-        plot.caption = element_text(size=6, hjust=0.0, face="italic", color="black"),
-        axis.text.x = element_text(size = 6, angle = 45),
-        axis.text.y = element_text(size = 6),
-        axis.title.y = element_text(size = 7),
-        axis.title.x = element_text(size = 7),
-        legend.title = element_text(size=7, hjust = 0.5), 
-        legend.text = element_text(size=6),
-        legend.position = "none")
-
 
 map2 <- map1 %>% 
   filter(year == 2022) %>% 
@@ -460,6 +436,10 @@ graph4 <- crecimientoFuentes %>%
         legend.text = element_text(size=6),
         legend.position = "none")
 
+#############################################################
+#  La base fotovoltaica.csv esta en el repositorio          #
+#############################################################
+
 fotovoltaica <- read.csv2("fotovoltaica.csv")
 
 # Capacidad efectiva neta solar = 278.66
@@ -554,7 +534,7 @@ text_plot3 <- tib_summary_text3 %>%
   # clip = 'off' is important for putting it together later.
   theme_void()
 
-
+# Generación de base de datos con información de IRENA (International Renewables Energy Agency)
 
 mejor <- tibble(
   "Costos de Instalación" = c(2353, 3991, 857, 1325),
@@ -668,6 +648,7 @@ infograph3
 
 info <- infograph1 / infograph2 / infograph3
 
+# Guardado de la infografia como una imagen en formato .png
 
 ggsave(filename = "info.png",
        plot = info,
