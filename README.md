@@ -7,4 +7,4 @@ Hay dos productos:
 El código esta en lenguaje R y RMarkdown, lo ideal es correrlos en RStudio.
 
 Tanto los documentos como el código pueden ser utilizados libremente.
-Hay un gran trabajo de visualización de datos que se puede adaptar facilmente a otros países que esten contenidos en la base de datos de Our World in Data, disponible en: 
+Hay un gran trabajo de visualización de datos que se puede adaptar facilmente a otros países que esten contenidos en la base de datos de Our World in Data, disponible en: https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv
